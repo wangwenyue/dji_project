@@ -5,7 +5,8 @@
 ![](http://omsd8hfm0.bkt.clouddn.com/dji1.png)
 
 
-### In this project, I use yahoo finance API to get real time stock price, use pandas library to do data analysis, and then use matplotlib library to generate plots.
+### In this project, I use yahoo finance API to get real time stock price, use pandas library to do data analysis, and then use matplotlib library to generate plots. Wxpython generates the GUI.
+
 ![](http://omsd8hfm0.bkt.clouddn.com/dji2.png)
 
 

@@ -27,14 +27,12 @@ class StockFrame(wx.Frame):
 
         panel = wx.Panel(self)
 
-        #原本是一个显示股票代码的窗口,感觉比较鸡肋,做了些修改
+        
         codeSizer = wx.BoxSizer(wx.HORIZONTAL)
         labelText = wx.StaticText(panel, label="Real-Time Stock Charting")
         codeSizer.Add(labelText, 0, wx.ALIGN_BOTTOM)
         codeSizer.Add((10, 10))
-        # addressText = wx.TextCtrl(panel, value='IBM')
-        # addressText.SetSize(addressText.GetBestFittingSize())
-        # codeSizer.Add(addressText)
+        
         
         self.list = wx.ListCtrl(panel, wx.NewId(), style=wx.LC_REPORT)
         self.list.InsertColumn(0,"Stock Code")
@@ -68,12 +66,6 @@ class StockFrame(wx.Frame):
         panel.SetSizerAndFit(vsizer)        
         panel.Layout()        
         
-        
-        '''frameSizer = wx.BoxSizer(wx.VERTICAL)
-        frameSizer.Add(panel)
-        self.SetSizerAndFit(frameSizer)
-        self.Layout()
-        self.Fit()'''
 
     #遍历获取的股票信息，呈现出来
     def setData(self,data):
@@ -156,22 +148,6 @@ app = wx.App(False)
 top = StockFrame("Companies in the Dow Jones Industrial Average")
 top.Show(True)
 top.getstatics()
-# def getstatics(self):
-# url = urllib.urlopen('http://query1.finance.yahoo.com/v7/finance/quote?formatted=true&crumb=azVqAvrYffI&lang=en-US&region=US&symbols=DD%2CAAPL%2CCSCO%2CCVX%2CVZ%2CJPM%2CJNJ%2CMRK%2CPFE%2CUNH%2CMSFT%2CIBM%2CV%2CUTX%2CTRV%2CGE%2CKO%2CNKE%2CGS%2CMMM%2CDIS%2CMCD%2CINTC%2CCAT%2CPG%2CXOM%2CAXP%2CHD%2CBA%2CWMT&fields=longName%2CregularMarketPrice%2CregularMarketChange%2CregularMarketChangePercent&corsDomain=finance.yahoo.com')
-# # print str
-
-# resp = json.loads(url.read().decode('utf-8'))
-
-# infolist = []
-# if resp:
-#     for stock in resp['quoteResponse']['result']:
-#         # print(stock['symbol'], stock['longName'], stock['regularMarketPrice']['fmt'])
-#         infolist.append([stock['symbol'],stock['longName'],stock['regularMarketPrice']['fmt']])
-#     top.setData(infolist)
-#     # print infolist
-# else:  
-#     wx.MessageBox('Download failed.', 'Message',  wx.OK | wx.ICON_INFORMATION)
-
 app.MainLoop()
 
 
